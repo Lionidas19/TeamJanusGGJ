@@ -5,16 +5,17 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public ControlScheme controls;
+
+    GameObject camera;
     
     private Rigidbody2D rigidbody;
-
-    [SerializeField] private FOV FoV;
 
     public float MovementSpeed;
     Vector2 lastDirection;
 
     void Awake()
     {
+        camera = GameObject.Find("Main Camera");
         controls = new ControlScheme();
         rigidbody = GetComponent<Rigidbody2D>();
     }
@@ -28,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 movementInput = controls.Player.Movement.ReadValue<Vector2>();
         rigidbody.velocity = movementInput * MovementSpeed;
-        if(movementInput.x >= 0.7)
+        if (movementInput.x >= 0.7)
         {
             rigidbody.MoveRotation(0);
         }
@@ -36,28 +37,8 @@ public class PlayerMovement : MonoBehaviour
         {
             rigidbody.MoveRotation(-180);
         }
-        if(movementInput == Vector2.zero)
-        {
-            FoV.SetAimDirection(lastDirection);
-        }
-        else
-        {
-            FoV.SetAimDirection(movementInput.normalized);
-            lastDirection = movementInput.normalized;
-        }
         
-        FoV.SetOrigin(transform.position);
-    }
-
-    float GetAngleFromVectorFloat(Vector2 dir)
-    {
-        dir = dir.normalized;
-        float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        if (n < 0)
-        {
-            n += 360;
-        }
-        return n;
+        camera.transform.position = new Vector3(transform.position.x, transform.position.y, camera.transform.position.z);
     }
 
     private void OnEnable()
