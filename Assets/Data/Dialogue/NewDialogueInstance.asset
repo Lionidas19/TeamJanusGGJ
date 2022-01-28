@@ -16,14 +16,14 @@ MonoBehaviour:
   is_speaking_with_character: 1
   character_speaking_with: 0
   dialogue_lines:
-  - character_speaking_line: 1
+  - character_speaking_line: 0
     line_text: Hi
     contains_a_lie: 0
     next_dialogue_line_index: 1
     available_responses:
     - response_text: No!
       next_dialogue_line_index: 0
-  - character_speaking_line: 1
+  - character_speaking_line: 0
     line_text: Hi
     contains_a_lie: 0
     next_dialogue_line_index: -1

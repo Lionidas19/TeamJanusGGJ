@@ -3123,7 +3123,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895621744}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc626d4c81f638d4bab43a1538f9c95b, type: 3}
   m_Name: 
@@ -3133,6 +3133,7 @@ MonoBehaviour:
   - {fileID: 698850668}
   - {fileID: 1482338284}
   - {fileID: 1250944731}
+  FoV: {fileID: 0}
   MovementSpeed: 10
 --- !u!50 &1895621749
 Rigidbody2D:
