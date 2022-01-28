@@ -8,7 +8,7 @@ public class NPCmovement : MonoBehaviour
 
     private Rigidbody2D rigidbody;
 
-    //[SerializeField] private FOV FoV;
+    [SerializeField] private FOV FoV;
 
     public float MovementSpeed;
 
@@ -46,15 +46,15 @@ public class NPCmovement : MonoBehaviour
             }
             if (movementInput == Vector2.zero)
             {
-                //FoV.SetAimDirection(lastDirection);
+                FoV.SetAimDirection(lastDirection);
             }
             else
             {
-                //FoV.SetAimDirection(movementInput.normalized);
+                FoV.SetAimDirection(movementInput.normalized);
                 lastDirection = movementInput.normalized;
             }
 
-            //FoV.SetOrigin(transform.position);
+            FoV.SetOrigin(transform.position);
         }
         else
         {
