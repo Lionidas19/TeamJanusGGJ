@@ -10,19 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5774144c6b6e6354b8cb2383f47f0ca0, type: 3}
-  m_Name: NewDialogueInstance
+  m_Name: Budd
   m_EditorClassIdentifier: 
-  dialogue_instance_title: Test_Dialogue
+  dialogue_instance_title: Budd
   is_speaking_with_character: 1
   character_speaking_with: 0
   dialogue_lines:
   - character_speaking_line: 0
-    line_text: Hi
+    line_text: What do you think?
     contains_a_lie: 0
     next_dialogue_line_index: 1
     available_responses: []
-  - character_speaking_line: 1
-    line_text: Hi Again
+  - character_speaking_line: 2
+    line_text: I think you suck!
+    contains_a_lie: 0
+    next_dialogue_line_index: 2
+    available_responses: []
+  - character_speaking_line: 0
+    line_text: How so?
+    contains_a_lie: 0
+    next_dialogue_line_index: 3
+    available_responses: []
+  - character_speaking_line: 2
+    line_text: I can smell it
     contains_a_lie: 0
     next_dialogue_line_index: -1
     available_responses: []

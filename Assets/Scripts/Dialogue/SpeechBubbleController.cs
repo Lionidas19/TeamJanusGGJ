@@ -28,6 +28,10 @@ namespace DialogueSystem
                     SwitchToDialogueResponseWithIndex(current_dialogue_response_index + 1);
                 }
             }*/
+            if (is_displaying)
+            {
+                speech_bubble_container.transform.position = Camera.main.WorldToScreenPoint((Vector2)transform.position + new Vector2(0, 1.5f));
+            }
         }
 
         public void DisplayDialogueLine(DialogueLine line)
@@ -36,6 +40,7 @@ namespace DialogueSystem
             {
                 is_displaying = true;
                 speech_bubble_container.gameObject.SetActive(true);
+                
             }
 
             text_container.text = "";

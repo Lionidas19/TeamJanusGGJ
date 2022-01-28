@@ -10,6 +10,8 @@ namespace DialogueSystem
         public ControlScheme controls;
         public static DialogueSceneManager instance;
 
+        public string name;
+
         [SerializeField] private Dialogue[] scene_dialogues;
         [SerializeField] public CharacterIDToSpeechBubbleMappingStruct[] set_character_to_id_mapping_struct_values;
 
@@ -57,8 +59,16 @@ namespace DialogueSystem
             // TEMP
             if(!temp_has_started_dialogue_reading)
             {
-                TriggerDialogueByDialogueInstanceName("Test_Dialogue", true);
-                temp_has_started_dialogue_reading = true;
+                if(name == "")
+                {
+                    return;
+                }
+                else
+                {
+                    /*TriggerDialogueByDialogueInstanceName("Test_Dialogue", true);*/
+                    TriggerDialogueByDialogueInstanceName(name, true);
+                    temp_has_started_dialogue_reading = true;
+                }
             }
             else
             {
@@ -144,6 +154,7 @@ namespace DialogueSystem
             ClearAllSpeechBubbles();
             should_block_first_interact_press = false;
             has_blocked_first_interact_press = false;
+            temp_has_started_dialogue_reading = false;
         }
 
         public void HandleDialogueLineByIndex(int index)
