@@ -49,7 +49,7 @@ public class Music : MonoBehaviour
         else
         {
             DarkMusic1.Play();
-            DarkMusic2.Play();
+            //DarkMusic2.Play();
             Howling.Play();
             HeartBeat.Play();
             HowlingTimer = Time.time + Random.Range(1.3f * Howling.clip.length, 2 * Howling.clip.length);

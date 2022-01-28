@@ -22,6 +22,12 @@ public class Portal : MonoBehaviour
         if(collision.tag == "Player")
         {
             LightOrDark.light = false;
+
+            if(gameObject.name == "Light")
+            {
+                LightOrDark.Position = (Vector2)collision.gameObject.transform.position + new Vector2(2, 0);
+            }
+
             SceneManager.LoadScene(gameObject.name);
         }
     }

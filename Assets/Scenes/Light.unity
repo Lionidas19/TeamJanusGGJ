@@ -2703,7 +2703,7 @@ GameObject:
   - component: {fileID: 1895621745}
   - component: {fileID: 1895621748}
   m_Layer: 0
-  m_Name: Goal
+  m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
