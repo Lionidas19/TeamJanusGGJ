@@ -17,7 +17,7 @@ namespace DialogueSystem
 
         void Update()
         {
-            if(current_dialogue_response_index != -1)
+            /*if(current_dialogue_response_index != -1)
             {
                 if(Input.GetKeyDown(KeyCode.A))
                 {
@@ -27,7 +27,7 @@ namespace DialogueSystem
                 {
                     SwitchToDialogueResponseWithIndex(current_dialogue_response_index + 1);
                 }
-            }
+            }*/
         }
 
         public void DisplayDialogueLine(DialogueLine line)

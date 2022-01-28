@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace DialogueSystem 
 {
     public class DialogueSceneManager : MonoBehaviour
     {
+        public ControlScheme controls;
         public static DialogueSceneManager instance;
 
         [SerializeField] private Dialogue[] scene_dialogues;
@@ -17,6 +19,8 @@ namespace DialogueSystem
         private int current_running_dialogue_current_line_index = -1;
         private int current_running_dialogue_next_line_index = -1;
         private bool currently_has_response_choice_open = false;
+
+        private bool temp_has_started_dialogue_reading = false;
 
         private bool should_block_first_interact_press = false;
         private bool has_blocked_first_interact_press = false;
@@ -38,24 +42,38 @@ namespace DialogueSystem
             {
                 scene_character_to_speech_bubble_controller_mapping.Add(map_entry.character_id, map_entry.speech_bubble_controller);
             }
+
+            controls = new ControlScheme();
+            controls.Player.Interact.performed += ctx => ProgressDialogueWithButton();
         }
 
-        void Update()
+        public void Start()
         {
-            if((currently_running_dialogue != null))
+            //ProgressDialogueWithButton();
+        }
+
+        public void ProgressDialogueWithButton()
+        {
+            // TEMP
+            if(!temp_has_started_dialogue_reading)
             {
-                if(Input.GetKeyDown(KeyCode.E))
-                {
-                    if(should_block_first_interact_press && !has_blocked_first_interact_press)
-                    { 
-                        has_blocked_first_interact_press = true;
-                    }
-                    else
-                    {
-                        HandleDialogueProgression();
-                    }
-                }
+                TriggerDialogueByDialogueInstanceName("Test_Dialogue", true);
+                temp_has_started_dialogue_reading = true;
             }
+            else
+            {
+
+                HandleDialogueProgression();
+            }
+        }
+        private void OnEnable()
+        {
+            controls.Enable();
+        }
+
+        private void OnDisable()
+        {
+            controls.Disable();
         }
 
         public Dialogue GetDialogueByDialogueInstanceName(string instance_name)
@@ -208,6 +226,7 @@ namespace DialogueSystem
             {
                 if(id != character_to_exclude_from_clearing)
                 {
+                    if(scene_character_to_speech_bubble_controller_mapping[id] == null) continue;
                     if(scene_character_to_speech_bubble_controller_mapping[id].is_displaying)
                     {
                         scene_character_to_speech_bubble_controller_mapping[id].ClearSpeechBubble();
