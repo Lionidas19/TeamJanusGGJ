@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Music : MonoBehaviour
 {
-    [SerializeField] private FOV FoV;
     #region Sound Clips
     [Header("Music Tracks")]
     public AudioSource DarkMusic1;
