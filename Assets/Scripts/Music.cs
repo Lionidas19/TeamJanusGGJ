@@ -50,10 +50,13 @@ public class Music : MonoBehaviour
         ManyBirds.volume = 0.7f;
         CountrySide.volume = 0.6f;
         Footsteps.volume = 1;
+
+        LightOrDark.stop = false;
     }
 
     void Start()
     {
+        
         if(LightOrDark.light == true)
         {
             Black.gameObject.SetActive(false);
@@ -82,58 +85,75 @@ public class Music : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(LightOrDark.light == true)
+        if (LightOrDark.stop == false)
         {
-            if (Time.time > BirdsTimer && playWind == false)
+            if (LightOrDark.light == true)
             {
-                Birds.Play();
-                BirdsTimer = Time.time + Random.Range(1.3f * Birds.clip.length, 2 * Birds.clip.length);
-            }
-
-            int closestTarget = 0;
-
-            for(int i = 1; i < target.Count; i++)
-            {
-                if(Vector2.Distance(target[i].transform.position, transform.position) < Vector2.Distance(target[closestTarget].transform.position, transform.position))
+                if (Time.time > BirdsTimer && playWind == false)
                 {
-                    closestTarget = i;
+                    Birds.Play();
+                    BirdsTimer = Time.time + Random.Range(1.3f * Birds.clip.length, 2 * Birds.clip.length);
+                }
+
+                int closestTarget = 0;
+
+                for (int i = 1; i < target.Count; i++)
+                {
+                    if (Vector2.Distance(target[i].transform.position, transform.position) < Vector2.Distance(target[closestTarget].transform.position, transform.position))
+                    {
+                        closestTarget = i;
+                    }
+                }
+
+                float playerToTarget = Vector2.Distance(target[closestTarget].transform.position, transform.position);
+                if (playerToTarget <= closestDistanceFromTarget)
+                {
+                    playWind = true;
+                    closestDistanceFromTarget = playerToTarget;
+                    float ratio = (closestDistanceFromTarget - minDistanceFromTarget) / (DistanceFromTarget - minDistanceFromTarget);
+                    if (ratio > 0)
+                    {
+                        LightMusic.volume = ratio;
+                        Birds.volume = ratio;
+                        ManyBirds.volume = ratio;
+                        CountrySide.volume = ratio;
+                    }
+                    else
+                    {
+                        LightMusic.volume = 0;
+                        Birds.volume = 0;
+                        ManyBirds.volume = 0;
+                        CountrySide.volume = 0;
+                    }
+                }
+                if (playWind == true && playedWind == false)
+                {
+                    playedWind = true;
+                    Wind.Play();
                 }
             }
-
-            float playerToTarget = Vector2.Distance(target[closestTarget].transform.position, transform.position);            
-            if (playerToTarget <= closestDistanceFromTarget)
+            else
             {
-                playWind = true;
-                closestDistanceFromTarget = playerToTarget;
-                float ratio = (closestDistanceFromTarget - minDistanceFromTarget) / (DistanceFromTarget - minDistanceFromTarget);
-                if (ratio > 0)
+                if (Time.time > HowlingTimer)
                 {
-                    LightMusic.volume = ratio;
-                    Birds.volume = ratio;
-                    ManyBirds.volume = ratio;
-                    CountrySide.volume = ratio;
+                    Howling.Play();
+                    HowlingTimer = Time.time + Random.Range(1.3f * Howling.clip.length, 2 * Howling.clip.length);
                 }
-                else
-                {
-                    LightMusic.volume = 0;
-                    Birds.volume = 0;
-                    ManyBirds.volume = 0;
-                    CountrySide.volume = 0;
-                }
-            }
-            if (playWind == true && playedWind == false)
-            {
-                playedWind = true;
-                Wind.Play();
             }
         }
         else
         {
-            if (Time.time > HowlingTimer)
-            {
-                Howling.Play();
-                HowlingTimer = Time.time + Random.Range(1.3f * Howling.clip.length, 2 * Howling.clip.length);
-            }
+            DarkMusic1.volume = 0;
+            DarkMusic2.volume = 0;
+            LightMusic.volume = 0;
+            Howling.volume = 0;
+            HeartBeat.volume = 0;
+            HeavyBreathing.volume = 0;
+            Wind.volume = 0;
+            Birds.volume = 0;
+            ManyBirds.volume = 0;
+            CountrySide.volume = 0;
+            Footsteps.volume = 0;
         }
     }
 }

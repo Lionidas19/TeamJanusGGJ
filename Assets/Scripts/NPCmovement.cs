@@ -32,39 +32,46 @@ public class NPCmovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Vector2.Distance(checkpoints[checkpointIndex].transform.position, transform.position) > 1)
+        if(LightOrDark.stop == false)
         {
-            Vector2 movementInput = (nextCheckpoint - lastCheckpoint).normalized;
-            rigidbody.velocity = movementInput * MovementSpeed;
-            if (movementInput.x >= 0)
+            if (Vector2.Distance(checkpoints[checkpointIndex].transform.position, transform.position) > 1)
             {
-                rigidbody.MoveRotation(0);
-            }
-            else if (movementInput.x < 0)
-            {
-                rigidbody.MoveRotation(-180);
-            }
-            if (movementInput == Vector2.zero)
-            {
-                FoV.SetAimDirection(lastDirection);
+                Vector2 movementInput = (nextCheckpoint - lastCheckpoint).normalized;
+                rigidbody.velocity = movementInput * MovementSpeed;
+                if (movementInput.x >= 0)
+                {
+                    rigidbody.MoveRotation(0);
+                }
+                else if (movementInput.x < 0)
+                {
+                    rigidbody.MoveRotation(-180);
+                }
+                if (movementInput == Vector2.zero)
+                {
+                    FoV.SetAimDirection(lastDirection);
+                }
+                else
+                {
+                    FoV.SetAimDirection(movementInput.normalized);
+                    lastDirection = movementInput.normalized;
+                }
+
+                FoV.SetOrigin(transform.position);
             }
             else
             {
-                FoV.SetAimDirection(movementInput.normalized);
-                lastDirection = movementInput.normalized;
+                lastCheckpoint = checkpoints[checkpointIndex].transform.position;
+                checkpointIndex++;
+                if (checkpointIndex >= checkpoints.Count)
+                {
+                    checkpointIndex = 0;
+                }
+                nextCheckpoint = checkpoints[checkpointIndex].transform.position;
             }
-
-            FoV.SetOrigin(transform.position);
         }
         else
         {
-            lastCheckpoint = checkpoints[checkpointIndex].transform.position;
-            checkpointIndex++;
-            if (checkpointIndex >= checkpoints.Count)
-            {
-                checkpointIndex = 0;
-            }
-            nextCheckpoint = checkpoints[checkpointIndex].transform.position;
+            rigidbody.velocity = Vector2.zero;
         }
     }
 }
