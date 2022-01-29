@@ -9,6 +9,7 @@ namespace DialogueSystem
     {
         Raz,
         Genie,
-        Budd
+        Budd,
+        Rudd
     }
 }

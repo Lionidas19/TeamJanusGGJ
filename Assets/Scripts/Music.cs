@@ -29,14 +29,34 @@ public class Music : MonoBehaviour
     public float DistanceFromTarget;
     float closestDistanceFromTarget;
     public float minDistanceFromTarget;
-    public GameObject target;
+    public List<GameObject> target;
 
     bool playWind, playedWind;
+
+    public GameObject Black;
+    public GameObject ScrollingTexture;
+
+    void Awake()
+    {
+        DarkMusic1.volume = 0.5f;
+        DarkMusic2.volume = 0.3f;
+        LightMusic.volume = 0.7f;
+        Howling.volume = 0.2f;
+        HeartBeat.volume = 0.5f;
+        HeavyBreathing.volume = 0.4f;
+        Wind.volume = 1;
+        Birds.volume = 0.05f;
+        ManyBirds.volume = 0.7f;
+        CountrySide.volume = 0.6f;
+        Footsteps.volume = 1;
+    }
 
     void Start()
     {
         if(LightOrDark.light == true)
         {
+            Black.gameObject.SetActive(false);
+            ScrollingTexture.gameObject.SetActive(false);
             LightMusic.Play();
             Birds.Play();
             ManyBirds.Play();
@@ -48,8 +68,10 @@ public class Music : MonoBehaviour
         }
         else
         {
+            Black.gameObject.SetActive(true);
+            ScrollingTexture.gameObject.SetActive(true);
             DarkMusic1.Play();
-            //DarkMusic2.Play();
+            DarkMusic2.Play();
             Howling.Play();
             HeartBeat.Play();
             HowlingTimer = Time.time + Random.Range(1.3f * Howling.clip.length, 2 * Howling.clip.length);
@@ -67,7 +89,17 @@ public class Music : MonoBehaviour
                 BirdsTimer = Time.time + Random.Range(1.3f * Birds.clip.length, 2 * Birds.clip.length);
             }
 
-            float playerToTarget = Vector2.Distance(target.transform.position, transform.position);            
+            int closestTarget = 0;
+
+            for(int i = 1; i < target.Count; i++)
+            {
+                if(Vector2.Distance(target[i].transform.position, transform.position) < Vector2.Distance(target[closestTarget].transform.position, transform.position))
+                {
+                    closestTarget = i;
+                }
+            }
+
+            float playerToTarget = Vector2.Distance(target[closestTarget].transform.position, transform.position);            
             if (playerToTarget <= closestDistanceFromTarget)
             {
                 playWind = true;
