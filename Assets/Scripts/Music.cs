@@ -33,6 +33,7 @@ public class Music : MonoBehaviour
 
     bool playWind, playedWind;
 
+    [Header("Children")]
     public GameObject Black;
     public GameObject ScrollingTexture;
 
