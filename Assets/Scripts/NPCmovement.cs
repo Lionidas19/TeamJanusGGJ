@@ -56,7 +56,7 @@ public class NPCmovement : MonoBehaviour
                     lastDirection = movementInput.normalized;
                 }
 
-                FoV.SetOrigin(transform.position);
+                FoV.SetOrigin(transform.position /*+ new Vector3(0, -Mathf.Abs(transform.position.y), 0)*/);
             }
             else
             {
