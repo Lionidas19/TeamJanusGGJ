@@ -20,6 +20,7 @@ public class testtext : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Image.transform.position = Camera.main.WorldToScreenPoint((Vector2)transform.position + new Vector2(0, 1.5f));
         if(Time.time - enableTimer > timeToEnable && Image.active == false)
         {
             Image.active = true;
