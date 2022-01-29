@@ -38,14 +38,14 @@ public class NPCmovement : MonoBehaviour
             {
                 Vector2 movementInput = (nextCheckpoint - lastCheckpoint).normalized;
                 rigidbody.velocity = movementInput * MovementSpeed;
-                if (movementInput.x >= 0)
+                /*if (movementInput.x >= 0)
                 {
                     rigidbody.MoveRotation(0);
                 }
                 else if (movementInput.x < 0)
                 {
                     rigidbody.MoveRotation(-180);
-                }
+                }*/
                 if (movementInput == Vector2.zero)
                 {
                     FoV.SetAimDirection(lastDirection);
