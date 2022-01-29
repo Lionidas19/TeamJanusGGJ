@@ -8,6 +8,8 @@ namespace DialogueSystem
     public enum CharacterID 
     {
         Raz,
-        Genie
+        Genie,
+        Budd,
+        Rudd
     }
 }

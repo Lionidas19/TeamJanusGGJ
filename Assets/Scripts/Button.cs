@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 {
-    [SerializeField] private string Light3 = "Light3";
+    [SerializeField] private string Light = "Light";
     [SerializeField] private string Credits = "Credits";
 
     public void StartGame()
     {
         LightOrDark.light = true;
-        SceneManager.LoadScene(Light3);
+        SceneManager.LoadScene(Light);
     }
 
     public void StartCredits()
