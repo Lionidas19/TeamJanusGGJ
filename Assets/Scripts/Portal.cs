@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
+
+    public Animator transition;
+
+    public float transitionTime = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,14 +26,23 @@ public class Portal : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            LightOrDark.light = false;
+            LightOrDark.light = !LightOrDark.light;
 
-            if(gameObject.name == "Light")
+            if (LightOrDark.light == true)
             {
                 LightOrDark.Position = (Vector2)collision.gameObject.transform.position + new Vector2(2, 0);
             }
 
-            SceneManager.LoadScene(gameObject.name);
+            StartCoroutine(LoadLevel(gameObject.name));
         }
+    }
+
+    IEnumerator LoadLevel(string light)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(1);
+
+        SceneManager.LoadScene(light);
     }
 }

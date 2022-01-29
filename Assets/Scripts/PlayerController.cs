@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public Animator transition;
+
+    public float transitionTime = 1f;
+
     public ControlScheme controls;
 
     public AudioSource Pop;
@@ -69,12 +73,16 @@ public class PlayerController : MonoBehaviour
     IEnumerator YoureDead()
     {
         //Pop.PlayOneShot(clip);
-        yield return new WaitForSeconds(3);
-        DoLast();
+        yield return new WaitForSeconds(Pop.clip.length);
+        StartCoroutine(DoLast());
     }
 
-    void DoLast()
+    IEnumerator DoLast()
     {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(1);
+
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }
