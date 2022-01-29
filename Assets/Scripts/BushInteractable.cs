@@ -2,28 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BushInteractable : Interactable
+public class BushInteractable : MonoBehaviour
 {
     bool is_being_used = false;
-    private void Start()
+
+    void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Bleh");
+        if(other.tag != "Player") return;
+        if (!other.gameObject.TryGetComponent<PlayerController>(out var playerController)) return;
+        playerController.Hide();
+        is_being_used = true;
     }
 
-    public override void Interact()
+    void OnTriggerExit2D(Collider2D other)
     {
-        // IS THIS THE BEST WAY??????????????
-        var playerGameObject = GameObject.FindWithTag("Player");
-        if(!is_being_used)
-        {
-            is_being_used = true;
-            playerGameObject.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, playerGameObject.transform.position.z);
-        }
-        else
-        {
-            is_being_used = false;
-        }
-
-
+        if(other.tag != "Player") return;
+        if (!other.gameObject.TryGetComponent<PlayerController>(out var playerController)) return;
+        playerController.Unhide();
+        is_being_used = false;
     }
 }

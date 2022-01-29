@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public AudioSource Pop;
 
     GameObject camera;
+
+    public bool is_in_hiding = false;
     
     private Rigidbody2D rigidbody;
 
@@ -64,6 +66,7 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.tag == "FOV")
         {
+            if(is_in_hiding) return;
             LightOrDark.stop = true;
             Pop.Play();
             StartCoroutine("YoureDead");
@@ -85,5 +88,17 @@ public class PlayerController : MonoBehaviour
 
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+    }
+
+    public void Hide()
+    {
+        Debug.Log("Player hiding");
+        is_in_hiding = true;
+    }
+
+    public void Unhide()
+    {
+        Debug.Log("Player unhiding");
+        is_in_hiding = false;
     }
 }

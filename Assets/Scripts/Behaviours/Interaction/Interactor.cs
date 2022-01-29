@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Interactor : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class Interactor : MonoBehaviour
     private void Awake()
     {
         controls = new ControlScheme();
-        controls.Player.Interact.performed += ctx => Test();
+        controls.Player.Interact.performed += Test;
     }
 
     private void Start()
@@ -21,7 +22,7 @@ public class Interactor : MonoBehaviour
         StartCoroutine(UpdateNearestInteractable());
     }
 
-    public void Test()
+    public void Test(InputAction.CallbackContext context)
     {
         Debug.Log("Test!");
     }
@@ -53,7 +54,6 @@ public class Interactor : MonoBehaviour
             _nearestInteractable = null;
             var colliders = new Collider[20];
             Physics.OverlapSphereNonAlloc(transform.position, interactableRadius, colliders, LayerMask.GetMask("Interactable"));
-
             foreach(var c in colliders)
             {
                 if (c == null) continue;
