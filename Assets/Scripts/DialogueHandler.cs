@@ -33,7 +33,7 @@ public class DialogueHandler : MonoBehaviour
             nearNPCs = false;
             text.enabled = false;
         }
-        else if (colliders.Length > 1)
+        else if (colliders.Length >= 1)
         {
             nearNPCs = true;
             for (int i = 1; i < colliders.Length; i++)

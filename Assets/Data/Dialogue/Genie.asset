@@ -17,12 +17,12 @@ MonoBehaviour:
   character_speaking_with: 0
   dialogue_lines:
   - character_speaking_line: 0
-    line_text: Fuck you!
+    line_text: Hey Jin! What's up?
     contains_a_lie: 0
     next_dialogue_line_index: 1
     available_responses: []
   - character_speaking_line: 1
-    line_text: Fuck you too!
+    line_text: Nothing much!
     contains_a_lie: 0
     next_dialogue_line_index: -1
     available_responses: []

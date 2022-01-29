@@ -12,6 +12,8 @@ public class NPCmovement : MonoBehaviour
 
     public float MovementSpeed;
 
+    private float Timer;
+
     Vector2 lastCheckpoint;
     Vector2 nextCheckpoint;
     Vector2 lastDirection;
@@ -27,25 +29,20 @@ public class NPCmovement : MonoBehaviour
     {
         lastDirection = Vector2.zero;
         checkpointIndex = 0;
+        lastCheckpoint = checkpoints[0].transform.position;
+        nextCheckpoint = checkpoints[1].transform.position;
         transform.position = checkpoints[0].transform.position;
+        Timer = Time.time;
     }
 
     void FixedUpdate()
     {
         if(LightOrDark.stop == false)
         {
-            if (Vector2.Distance(checkpoints[checkpointIndex].transform.position, transform.position) > 1)
+            if (Vector2.Distance(checkpoints[checkpointIndex].transform.position, transform.position) > 0.1f && Time.time - Timer < 5)
             {
-                Vector2 movementInput = (nextCheckpoint - lastCheckpoint).normalized;
+                Vector2 movementInput = (nextCheckpoint - /*lastCheckpoint*/(Vector2)transform.position).normalized;
                 rigidbody.velocity = movementInput * MovementSpeed;
-                /*if (movementInput.x >= 0)
-                {
-                    rigidbody.MoveRotation(0);
-                }
-                else if (movementInput.x < 0)
-                {
-                    rigidbody.MoveRotation(-180);
-                }*/
                 if (movementInput == Vector2.zero)
                 {
                     FoV.SetAimDirection(lastDirection);
@@ -56,10 +53,11 @@ public class NPCmovement : MonoBehaviour
                     lastDirection = movementInput.normalized;
                 }
 
-                FoV.SetOrigin(transform.position /*+ new Vector3(0, -Mathf.Abs(transform.position.y), 0)*/);
+                FoV.SetOrigin(transform.position);
             }
             else
             {
+                Timer = Time.time;
                 lastCheckpoint = checkpoints[checkpointIndex].transform.position;
                 checkpointIndex++;
                 if (checkpointIndex >= checkpoints.Count)

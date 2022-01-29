@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class LightOrDark
 {
-    public static bool light;
+    public static bool light = true;
 
     public static bool caught;
 
