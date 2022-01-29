@@ -26,15 +26,16 @@ public class DialogueHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, 3.0f, layerMask);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, 10.0f, layerMask);
         int closestNPC = 0;
         if (colliders.Length == 0)
         {
             nearNPCs = false;
             text.enabled = false;
         }
-        else if (colliders.Length > 1)
+        else if (colliders.Length >= 1)
         {
+            Debug.Log(colliders.Length);
             nearNPCs = true;
             for (int i = 1; i < colliders.Length; i++)
             {
