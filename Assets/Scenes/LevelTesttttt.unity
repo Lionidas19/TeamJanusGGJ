@@ -21117,6 +21117,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8438536509723211047, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 137.551
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438536509723211047, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 28.7141
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438536509723211047, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 6.2244997
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438536509723211047, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 5.6929
+      objectReference: {fileID: 0}
     - target: {fileID: 8438536511122577625, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
       propertyPath: m_Name
       value: NPC - Dark
@@ -21197,6 +21213,26 @@ PrefabInstance:
       propertyPath: checkpoints.Array.data[3]
       value: 
       objectReference: {fileID: 1464428883}
+    - target: {fileID: 8438536511122577631, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: timeToEnable
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438536511122577631, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: timeToDisable
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438536511175520121, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d458476b2e1b2bc47b727aa7a103f2cb, type: 3}
+    - target: {fileID: 9206067628781991774, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206067628781991774, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
 --- !u!1 &1385658500
