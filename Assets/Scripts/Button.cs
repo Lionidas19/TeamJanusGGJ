@@ -9,12 +9,12 @@ public class Button : MonoBehaviour
 
     public float transitionTime = 1f;
 
-    [SerializeField] private string Light = "Light";
+    [SerializeField] private string scene = "Light";
     [SerializeField] private string Credits = "Credits";
 
     public void StartGame()
     {
-        StartCoroutine(LoadLevel(Light));
+        StartCoroutine(LoadLevel(scene));
     }
 
     IEnumerator LoadLevel(string light)
