@@ -6,8 +6,6 @@ public class NPCmovement : MonoBehaviour
 {
     public List<GameObject> checkpoints;
 
-    public Vector2 StaticLookDirection;
-
     private Rigidbody2D rigidbody;
 
     [SerializeField] private FOV FoV;
@@ -31,12 +29,9 @@ public class NPCmovement : MonoBehaviour
     {
         lastDirection = Vector2.zero;
         checkpointIndex = 0;
-        if (checkpoints.Count > 1)
-        {
-            lastCheckpoint = checkpoints[0].transform.position;
-            nextCheckpoint = checkpoints[1].transform.position;
-            transform.position = checkpoints[0].transform.position;
-        }
+        lastCheckpoint = checkpoints[0].transform.position;
+        nextCheckpoint = checkpoints[1].transform.position;
+        transform.position = checkpoints[0].transform.position;
         Timer = Time.time;
     }
 
@@ -44,40 +39,32 @@ public class NPCmovement : MonoBehaviour
     {
         if(LightOrDark.stop == false)
         {
-            if(checkpoints.Count <= 1)
+            if (Vector2.Distance(checkpoints[checkpointIndex].transform.position, transform.position) > 0.1f && Time.time - Timer < 5)
             {
-                FoV.SetAimDirection(StaticLookDirection);
+                Vector2 movementInput = (nextCheckpoint - /*lastCheckpoint*/(Vector2)transform.position).normalized;
+                rigidbody.velocity = movementInput * MovementSpeed;
+                if (movementInput == Vector2.zero)
+                {
+                    FoV.SetAimDirection(lastDirection);
+                }
+                else
+                {
+                    FoV.SetAimDirection(movementInput.normalized);
+                    lastDirection = movementInput.normalized;
+                }
+
                 FoV.SetOrigin(transform.position);
             }
             else
             {
-                if (Vector2.Distance(checkpoints[checkpointIndex].transform.position, transform.position) > 0.1f && Time.time - Timer < 5)
+                Timer = Time.time;
+                lastCheckpoint = checkpoints[checkpointIndex].transform.position;
+                checkpointIndex++;
+                if (checkpointIndex >= checkpoints.Count)
                 {
-                    Vector2 movementInput = (nextCheckpoint - /*lastCheckpoint*/(Vector2)transform.position).normalized;
-                    rigidbody.velocity = movementInput * MovementSpeed;
-                    if (movementInput == Vector2.zero)
-                    {
-                        FoV.SetAimDirection(lastDirection);
-                    }
-                    else
-                    {
-                        FoV.SetAimDirection(movementInput.normalized);
-                        lastDirection = movementInput.normalized;
-                    }
-
-                    FoV.SetOrigin(transform.position);
+                    checkpointIndex = 0;
                 }
-                else
-                {
-                    Timer = Time.time;
-                    lastCheckpoint = checkpoints[checkpointIndex].transform.position;
-                    checkpointIndex++;
-                    if (checkpointIndex >= checkpoints.Count)
-                    {
-                        checkpointIndex = 0;
-                    }
-                    nextCheckpoint = checkpoints[checkpointIndex].transform.position;
-                }
+                nextCheckpoint = checkpoints[checkpointIndex].transform.position;
             }
         }
         else
