@@ -2772,11 +2772,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1140614263239521508, guid: 3025bcd46627d63478e478349b3ed64d, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1
+      value: 1.34
       objectReference: {fileID: 0}
     - target: {fileID: 1140614263239521508, guid: 3025bcd46627d63478e478349b3ed64d, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2
+      value: 2.06
       objectReference: {fileID: 0}
     - target: {fileID: 1140614263239521509, guid: 3025bcd46627d63478e478349b3ed64d, type: 3}
       propertyPath: m_Sprite
@@ -3173,6 +3173,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3356701208473905663, guid: 3615f21ed57d99d42ab438d8b48042ff, type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 1297939872}
     - target: {fileID: 3356701208473905663, guid: 3615f21ed57d99d42ab438d8b48042ff, type: 3}
       propertyPath: set_character_to_id_mapping_struct_values.Array.data[0].speech_bubble_controller
       value: 
