@@ -36,6 +36,10 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        if(LightOrDark.light == true)
+        {
+            transform.position = LightOrDark.MCPositions[LightOrDark.numberOfDark];
+        }
         Keys = GameObject.FindGameObjectsWithTag("Key");
     }
 
