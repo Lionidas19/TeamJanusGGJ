@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Portal
   - FOV
+  - Key
   layers:
   - Default
   - TransparentFX
