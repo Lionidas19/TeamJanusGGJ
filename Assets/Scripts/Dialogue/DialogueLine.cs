@@ -12,5 +12,7 @@ namespace DialogueSystem
         [SerializeField] public bool contains_a_lie;
         [SerializeField] public int next_dialogue_line_index;
         [SerializeField] public DialogueResponse[] available_responses;
+        [SerializeField] public bool load_level_after_line;
+        [SerializeField] public string level_to_load;
     }
 }

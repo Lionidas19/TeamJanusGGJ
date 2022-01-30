@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator MoveOn()
     {
         transition.SetTrigger("Start");
-
+        LightOrDark.light = true;
         yield return new WaitForSeconds(1);
 
         SceneManager.LoadScene("Light");

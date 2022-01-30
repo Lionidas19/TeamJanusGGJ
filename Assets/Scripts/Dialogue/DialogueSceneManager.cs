@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace DialogueSystem 
 {
@@ -21,6 +22,11 @@ namespace DialogueSystem
         private int current_running_dialogue_current_line_index = -1;
         private int current_running_dialogue_next_line_index = -1;
         private bool currently_has_response_choice_open = false;
+
+
+        private bool to_load_a_level_after_handling_dialogue = false;
+        private string level_to_load_after_dialogue;
+
 
         private bool temp_has_started_dialogue_reading = false;
 
@@ -176,7 +182,16 @@ namespace DialogueSystem
             
             if(current_running_dialogue_next_line_index >= currently_running_dialogue.dialogue_lines.Length || current_running_dialogue_next_line_index < 0)
             {
+                if(current_dialogue_line.load_level_after_line)
+                {
+                    to_load_a_level_after_handling_dialogue = true;
+                    level_to_load_after_dialogue = current_dialogue_line.level_to_load;
+                }
                 ClearDialogue();
+                if(!to_load_a_level_after_handling_dialogue) return;
+                SceneManager.LoadScene(level_to_load_after_dialogue);
+                to_load_a_level_after_handling_dialogue = false;
+                level_to_load_after_dialogue = "";
             }
             else
             {
