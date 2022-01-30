@@ -3471,6 +3471,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3356701208473905663, guid: 3615f21ed57d99d42ab438d8b48042ff, type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 1297939872}
+    - target: {fileID: 3356701208473905663, guid: 3615f21ed57d99d42ab438d8b48042ff, type: 3}
       propertyPath: set_character_to_id_mapping_struct_values.Array.data[0].speech_bubble_controller
       value: 
       objectReference: {fileID: 1116090928}
