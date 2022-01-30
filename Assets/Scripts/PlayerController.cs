@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+
+    GameObject[] Keys;
+
+    int KeysPickedUp;
+
     public Animator transition;
 
     public float transitionTime = 1f;
@@ -26,12 +31,18 @@ public class PlayerController : MonoBehaviour
     {
         camera = GameObject.FindGameObjectWithTag("MainCamera");
         controls = new ControlScheme();
+        KeysPickedUp = 0;
         rigidbody = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        Keys = GameObject.FindGameObjectsWithTag("Key");
     }
 
     void FixedUpdate()
     {
-        if (LightOrDark.stop == false)
+        if (LightOrDark.stop == false && (Keys.Length == 0 || (Keys.Length > 0 && KeysPickedUp < Keys.Length)))
         {
             Vector2 movementInput = controls.Player.Movement.ReadValue<Vector2>();
             rigidbody.velocity = movementInput * MovementSpeed;
@@ -71,6 +82,24 @@ public class PlayerController : MonoBehaviour
             Pop.Play();
             StartCoroutine("YoureDead");
         }
+        if(collision.tag == "Key")
+        {
+            collision.gameObject.SetActive(false);
+            KeysPickedUp++;
+            if(KeysPickedUp == Keys.Length)
+            {
+                StartCoroutine("GoBack");
+            }
+        }
+    }
+
+    IEnumerator GoBack()
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(1);
+
+        SceneManager.LoadScene("Light");
     }
 
     IEnumerator YoureDead()
