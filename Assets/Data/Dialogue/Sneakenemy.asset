@@ -14,17 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue_instance_title: Sneakenemy
   is_speaking_with_character: 1
-  character_speaking_with: 0
+  character_speaking_with: 2
   dialogue_lines:
-  - character_speaking_line: 0
-    line_text: Soup
+  - character_speaking_line: 2
+    line_text: "You\u2019re doing great!"
     contains_a_lie: 0
     next_dialogue_line_index: 1
     available_responses: []
     load_level_after_line: 0
     level_to_load: 
   - character_speaking_line: 2
-    line_text: whatever
+    line_text: See, I told you
+    contains_a_lie: 0
+    next_dialogue_line_index: 2
+    available_responses: []
+    load_level_after_line: 0
+    level_to_load: 
+  - character_speaking_line: 2
+    line_text: "There\u2019s nothing wrong with you!"
     contains_a_lie: 0
     next_dialogue_line_index: -1
     available_responses: []
