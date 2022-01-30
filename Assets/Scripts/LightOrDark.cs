@@ -10,5 +10,8 @@ public static class LightOrDark
 
     public static bool stop;
 
-    public static Vector2 Position;
+    public static Vector2[] MCPositions = new Vector2[]{
+        new Vector2(8.71f, -31.8f),
+
+    };
 }

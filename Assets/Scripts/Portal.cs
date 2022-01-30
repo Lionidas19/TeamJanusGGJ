@@ -30,7 +30,7 @@ public class Portal : MonoBehaviour
 
             if (LightOrDark.light == true)
             {
-                LightOrDark.Position = (Vector2)collision.gameObject.transform.position + new Vector2(2, 0);
+                //LightOrDark.Position = (Vector2)collision.gameObject.transform.position + new Vector2(2, 0);
             }
 
             StartCoroutine(LoadLevel(gameObject.name));

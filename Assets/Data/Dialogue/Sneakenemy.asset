@@ -16,7 +16,7 @@ MonoBehaviour:
   is_speaking_with_character: 1
   character_speaking_with: 0
   dialogue_lines:
-  - character_speaking_line: 0
+  - character_speaking_line: 2
     line_text: Soup
     contains_a_lie: 0
     next_dialogue_line_index: 1

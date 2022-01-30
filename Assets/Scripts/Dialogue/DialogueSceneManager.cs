@@ -193,7 +193,7 @@ namespace DialogueSystem
                 if(!to_load_a_level_after_handling_dialogue) return;
                 StartCoroutine("MoveOn");
                 to_load_a_level_after_handling_dialogue = false;
-                level_to_load_after_dialogue = "";
+                //level_to_load_after_dialogue = "";
             }
             else
             {
