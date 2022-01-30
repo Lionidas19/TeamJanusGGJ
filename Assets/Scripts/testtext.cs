@@ -5,6 +5,7 @@ using UnityEngine;
 public class testtext : MonoBehaviour
 {
     public GameObject Image;
+    public GameObject Location;
     public float timeToEnable;
     public float timeToDisable;
     float enableTimer;
@@ -20,7 +21,7 @@ public class testtext : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Image.transform.position = Camera.main.WorldToScreenPoint((Vector2)transform.position + new Vector2(3f, 2f));
+        Image.transform.position = Camera.main.WorldToScreenPoint((Vector2)Location.transform.position);
         if(Time.time - enableTimer > timeToEnable && Image.active == false)
         {
             Image.active = true;
