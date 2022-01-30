@@ -192,7 +192,6 @@ namespace DialogueSystem
                 ClearDialogue();
                 if(!to_load_a_level_after_handling_dialogue) return;
                 StartCoroutine("MoveOn");
-                SceneManager.LoadScene(level_to_load_after_dialogue);
                 to_load_a_level_after_handling_dialogue = false;
                 level_to_load_after_dialogue = "";
             }
@@ -269,7 +268,7 @@ namespace DialogueSystem
             LightOrDark.light = false;
             yield return new WaitForSeconds(1);
 
-            SceneManager.LoadScene("Light");
+            SceneManager.LoadScene(level_to_load_after_dialogue);
         }
     }
 
