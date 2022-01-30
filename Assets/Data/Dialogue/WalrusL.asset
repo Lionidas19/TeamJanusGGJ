@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5774144c6b6e6354b8cb2383f47f0ca0, type: 3}
+  m_Name: WalrusL
+  m_EditorClassIdentifier: 
+  dialogue_instance_title: WalrusL
+  is_speaking_with_character: 1
+  character_speaking_with: 0
+  dialogue_lines:
+  - character_speaking_line: 0
+    line_text: Thank you, but my situation is complicated
+    contains_a_lie: 0
+    next_dialogue_line_index: 1
+    available_responses: []
+    load_level_after_line: 0
+    level_to_load: 
+  - character_speaking_line: 0
+    line_text: "A positive outlook just isn\u2019t enough."
+    contains_a_lie: 0
+    next_dialogue_line_index: 2
+    available_responses: []
+    load_level_after_line: 0
+    level_to_load: 
+  - character_speaking_line: 5
+    line_text: ' Oh, alright. '
+    contains_a_lie: 0
+    next_dialogue_line_index: 3
+    available_responses: []
+    load_level_after_line: 0
+    level_to_load: 
+  - character_speaking_line: 5
+    line_text: " Well, I\u2019m here if you need me. "
+    contains_a_lie: 0
+    next_dialogue_line_index: -1
+    available_responses: []
+    load_level_after_line: 0
+    level_to_load: 

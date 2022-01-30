@@ -9,6 +9,12 @@ namespace DialogueSystem
     {
         Raz,
         Genie,
-        Sneakenemy
+        Sneakenemy,
+        SneakenemyL,
+        Walrus,
+        WalrusL,
+        Grandma,
+        GrandmaL,
+        Self
     }
 }
