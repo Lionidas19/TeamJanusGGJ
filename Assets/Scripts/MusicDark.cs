@@ -25,6 +25,8 @@ public class MusicDark : MonoBehaviour
         HeavyBreathing.volume = 0.4f;
 
         LightOrDark.stop = false;
+        LightOrDark.light = false;
+        LightOrDark.numberOfDark++;
     }
 
     void Start()

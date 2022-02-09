@@ -37,6 +37,7 @@ public class MusicLight : MonoBehaviour
         Footsteps.volume = 1;
 
         LightOrDark.stop = false;
+        LightOrDark.light = true;
     }
 
     void Start()

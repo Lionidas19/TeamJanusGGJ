@@ -265,8 +265,6 @@ namespace DialogueSystem
         IEnumerator MoveOn()
         {
             transition.SetTrigger("Start");
-            LightOrDark.light = false;
-            LightOrDark.numberOfDark++;
             yield return new WaitForSeconds(1);
 
             SceneManager.LoadScene(level_to_load_after_dialogue);

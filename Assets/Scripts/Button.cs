@@ -14,7 +14,6 @@ public class Button : MonoBehaviour
 
     public void StartGame()
     {
-        LightOrDark.light = true;
         StartCoroutine(LoadLevel(scene));
     }
 

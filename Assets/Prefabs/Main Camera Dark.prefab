@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2427564863282854978}
   - component: {fileID: 2427564863282854979}
-  - component: {fileID: 1800368528443444374}
   m_Layer: 11
   m_Name: Black
   m_TagString: Untagged
@@ -51,7 +50,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 94406aebc01c00041b4fdaa5b088aec7, type: 2}
+  - {fileID: 2100000, guid: fd89eaac8d36d4a4b9f2c062587d492f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,20 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1800368528443444374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2427564863282854981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1869315ef51f8f74a8025eb36bf4fe91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollX: 0.5
-  scrollY: 0.5
 --- !u!1 &2427564863918061306
 GameObject:
   m_ObjectHideFlags: 0
