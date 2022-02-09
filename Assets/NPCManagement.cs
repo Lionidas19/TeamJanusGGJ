@@ -26,6 +26,7 @@ public class NPCManagement : MonoBehaviour
             }
             else if (LightOrDark.numberOfDark == 1)
             {
+                npcs[0].gameObject.transform.position = new Vector2(100, 100);
                 npcs[0].gameObject.SetActive(false);
                 npcs[2].gameObject.SetActive(true);
                 npcs[4].gameObject.SetActive(true);

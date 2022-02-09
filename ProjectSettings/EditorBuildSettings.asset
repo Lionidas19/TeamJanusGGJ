@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroMenu.unity
     guid: 17797af79792a224db9ad43f75a60250
   - enabled: 1
-    path: Assets/Scenes/Light.unity
+    path: Assets/Scenes/Light-Broken.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/LevelTesttttt.unity
@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: c1138b9e2abad524b89cefed4da6991a
+  - enabled: 1
+    path: Assets/Scenes/Light.unity
+    guid: 3cdb86fbe7f8a594e991abc3a9159bd4
   m_configObjects: {}
