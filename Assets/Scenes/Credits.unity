@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Leonidas Katsaros: Programming, Sound Design.
+  m_Text: 'Leonidas Katsaros
 
 '
 --- !u!222 &84870045
@@ -274,7 +274,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Emilie Simond: Level Design, Game Design.'
+  m_Text: Emilie Simond
 --- !u!222 &157208651
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -353,7 +353,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Kyle Thomas: Game Design, Level Design.
+  m_Text: 'Kyle Thomas
 
 '
 --- !u!222 &247331190
@@ -434,7 +434,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Sofia Romeo Abatangelo: Game Design, Level Design, Narrative Design.'
+  m_Text: Sofia Romeo Abatangelo
 --- !u!222 &704354866
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -730,7 +730,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Ar\xEDa J\xF3nsd\xF3ttir: Programming, Artist, Narrative Design."
+  m_Text: "Ar\xEDa J\xF3nsd\xF3ttir"
 --- !u!222 &1142236127
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -809,7 +809,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Michele Perrino: Game Design.'
+  m_Text: Michele Perrino
 --- !u!222 &1428433787
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -888,7 +888,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Jessica Engstler: Game Designer, Media Designer and Artist, SFX and Music\r"
+  m_Text: Jessica Engstler
 --- !u!222 &1550484226
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1120,8 +1120,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Odisseo Longobardi: Art, Game Design, Level Design, Worldbuilding, Narrative
-    Design Production\r"
+  m_Text: Odisseo Longobardi
 --- !u!222 &1826799587
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1200,7 +1199,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Daniele Corsetti: Artist'
+  m_Text: Daniele Corsetti
 --- !u!222 &1836182087
 CanvasRenderer:
   m_ObjectHideFlags: 0

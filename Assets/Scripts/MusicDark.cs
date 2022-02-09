@@ -8,28 +8,24 @@ public class MusicDark : MonoBehaviour
     [Header("Music Tracks")]
     public AudioSource DarkMusic1;
     public AudioSource DarkMusic2;
-    public AudioSource LightMusic;
     [Header("Bad Sound Effects")]
     public AudioSource Howling;
     public AudioSource HeartBeat;
     public AudioSource HeavyBreathing;
-    public AudioSource Wind;
-    [Header("Good Sound Effects")]
-    public AudioSource Birds;
-    public AudioSource ManyBirds;
-    public AudioSource CountrySide;
-    public AudioSource Footsteps;
 
-    float BirdsTimer;
+    float HowlingTimer;
     #endregion 
 
-    [Header("Target")]
-    public float DistanceFromTarget;
-    float closestDistanceFromTarget;
-    public float minDistanceFromTarget;
-    public GameObject target;
+    void Awake()
+    {
+        DarkMusic1.volume = 0.5f;
+        DarkMusic2.volume = 0.3f;
+        Howling.volume = 0.2f;
+        HeartBeat.volume = 0.5f;
+        HeavyBreathing.volume = 0.4f;
 
-    bool playWind, playedWind;
+        LightOrDark.stop = false;
+    }
 
     void Start()
     {
@@ -37,42 +33,27 @@ public class MusicDark : MonoBehaviour
         DarkMusic2.Play();
         Howling.Play();
         HeartBeat.Play();
-        closestDistanceFromTarget = DistanceFromTarget;
-        playWind = false;
-        playedWind = false;
-        BirdsTimer = Time.time + Random.Range(1.3f * Birds.clip.length, 2 * Birds.clip.length);
+        HowlingTimer = Time.time + Random.Range(1.3f * Howling.clip.length, 2 * Howling.clip.length);
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        /*if (Time.time > BirdsTimer)
+        if (LightOrDark.stop == false)
         {
-            print("Birds");
-            Birds.Play();
-            BirdsTimer = Time.time + Random.Range(1.3f * Birds.clip.length, 2 * Birds.clip.length);
-        }*/
-
-        /*float playerToTarget = Vector2.Distance(target.transform.position, transform.position);
-        if (playerToTarget <= closestDistanceFromTarget)
-        {
-            playWind = true;
-            closestDistanceFromTarget = playerToTarget;
-            float ratio = (closestDistanceFromTarget - minDistanceFromTarget) / (DistanceFromTarget - minDistanceFromTarget);
-            if (ratio > 0)
+            if (Time.time > HowlingTimer)
             {
-                LightMusic.volume = ratio;
-            }
-            else
-            {
-                LightMusic.volume = 0;
+                Howling.Play();
+                HowlingTimer = Time.time + Random.Range(1.3f * Howling.clip.length, 2 * Howling.clip.length);
             }
         }
-        if (playWind == true && playedWind == false)
+        else
         {
-            playedWind = true;
-            Wind.Play();
-        }*/
+            DarkMusic1.volume = 0;
+            DarkMusic2.volume = 0;
+            Howling.volume = 0;
+            HeartBeat.volume = 0;
+            HeavyBreathing.volume = 0;
+        }
     }
 }

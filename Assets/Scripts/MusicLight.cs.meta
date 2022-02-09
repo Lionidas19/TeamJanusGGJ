@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 36d657b59ed800342a552047288dfcaf
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - LightMusic: {fileID: 4310128623204760252, guid: 8ad5d967b3f87c54999858b45308c15b, type: 3}
+  - Wind: {fileID: 3318874596924786615, guid: 15192bb04df2c194fa8c967a52841486, type: 3}
+  - Birds: {fileID: 7771621942306661232, guid: d3f5487cb89edac4098793b7e1f7886c, type: 3}
+  - ManyBirds: {fileID: 4969291818669062915, guid: d70564752909f0a4abeb7c0ed9d4a179, type: 3}
+  - CountrySide: {fileID: 7080892900523833132, guid: f46ff8e697efc604ea5908b4ade6c3cf, type: 3}
+  - Footsteps: {fileID: 8370675077307529011, guid: 63c9f2b877b82414e962a6413d8d3142, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

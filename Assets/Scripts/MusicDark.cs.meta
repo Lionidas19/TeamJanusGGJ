@@ -3,7 +3,14 @@ guid: ee3b965c43ca7384182039be231cb9ba
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - DarkMusic1: {fileID: 7459625549586259618, guid: 221868461b69df449a27aac70c032b54, type: 3}
+  - DarkMusic2: {fileID: 1288436069854518180, guid: 4197d14fbd2a254458860a4ae7153781, type: 3}
+  - Howling: {fileID: 9145403270830914905, guid: b0d0c6e9600fda14aaf09807fd4df477, type: 3}
+  - HeartBeat: {fileID: 4983748058542629253, guid: b70e299de84dbe74d997295f377fffaa, type: 3}
+  - HeavyBreathing: {fileID: 1088853315533200452, guid: d2aaae9cf45499e48b427e9067a6385c, type: 3}
+  - Black: {instanceID: 0}
+  - ScrollingTexture: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
