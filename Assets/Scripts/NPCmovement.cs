@@ -11,7 +11,6 @@ public class NPCmovement : MonoBehaviour
     public AnimationClip patrolClip;
 
     public Vector2 StaticLookingDirection;
-    private Vector2 lastAngle;
 
     private Rigidbody2D rigidbody;
 
@@ -40,7 +39,6 @@ public class NPCmovement : MonoBehaviour
     void Start()
     {
         lastDirection = Vector2.zero;
-        lastAngle = Vector2.zero;
         checkpointIndex = 0;
         if(checkpoints.Count > 1)
         {
@@ -100,11 +98,9 @@ public class NPCmovement : MonoBehaviour
                 {
                     if(Time.time - patrolTimer < timeToPatrol)
                     {
-                        if(/*patrol.GetCurrentAnimatorStateInfo(0).length > patrol.GetCurrentAnimatorStateInfo(0).normalizedTime*/Time.time - patrollingTimer < patrolClip.length)
+                        if(Time.time - patrollingTimer < patrolClip.length)
                         {
                             Vector3 angleAnim = AngleFromZ(child.transform.localRotation.eulerAngles + checkpoints[checkpointIndex].transform.rotation.eulerAngles);
-                            //print("animating " + angleAnim);
-                            //Vector2 angle = new Vector2(Random.Range(-1, 1), Random.Range(-1,1));
                             FoV.SetAimDirection(angleAnim);
                             FoV.SetOrigin(transform.position);
                         }
@@ -143,7 +139,6 @@ public class NPCmovement : MonoBehaviour
                         else
                         {
                             patrollingTimer = Time.time;
-                            print("Start");
                             patrol.SetTrigger("Start");
                         }
                     }

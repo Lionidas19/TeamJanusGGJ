@@ -370,6 +370,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: Just try.
       objectReference: {fileID: 0}
+    - target: {fileID: 7322588118114592749, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e88b70b653bcf0d47a2159c7774e8291, type: 2}
     - target: {fileID: 8438536511122577625, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
       propertyPath: m_Name
       value: NPC - Dark (1)
@@ -429,7 +433,7 @@ PrefabInstance:
     - target: {fileID: 8438536511122577629, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
       propertyPath: patrolClip
       value: 
-      objectReference: {fileID: 7400000, guid: 6a55fc5fa4f67bc44927f90eb71dd3e5, type: 2}
+      objectReference: {fileID: 7400000, guid: a2e4785d4e45a7943a4ac0a9d5b10a8a, type: 2}
     - target: {fileID: 8438536511122577629, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
       propertyPath: timeToPatrol
       value: 2.5

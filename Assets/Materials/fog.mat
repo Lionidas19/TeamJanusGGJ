@@ -92,8 +92,8 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _EnvironmentReflections: 1
-    - _FogSize: 10
-    - _FogSize2: 20
+    - _FogSize: 14.5
+    - _FogSize2: 80.36
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
