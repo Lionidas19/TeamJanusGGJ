@@ -410,7 +410,7 @@ GameObject:
   - component: {fileID: 7803328203211209556}
   - component: {fileID: 2723657107142715413}
   m_Layer: 0
-  m_Name: LevelLoader
+  m_Name: LevelLoader - Must be placed at every level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -4,19 +4,28 @@ using UnityEngine;
 
 public class NPCmovement : MonoBehaviour
 {
+    [Header("List of NPC checkpoints")]
+    [Tooltip("The NPC will move from the first checkpoint to the next. If one checkpoint with the tag Patrol is inside the list, then the NPC will initiate a patrol animation. If no checkpoints are added the player will remain static.")]
     public List<GameObject> checkpoints;
+    [Header("Patrol FOV child of NPC")]
     public GameObject child;
-
+    [Header("Animator prefab")]
     public Animator patrol;
+    [Header("Animation clip prefab")]
     public AnimationClip patrolClip;
-
-    public Vector2 StaticLookingDirection;
 
     private Rigidbody2D rigidbody;
 
     [SerializeField] private FOV FoV;
 
+    [Header("Looking direction for when the NPC should remain in place.")]
+    [Tooltip("E.g. a vector of (0, 1) will point upwards, a (1, 0) will point right, a (1, 1) will point right and up, etc.")]
+    public Vector2 StaticLookingDirection; 
+
+    [Header("NPC movement speed")]
     public float MovementSpeed;
+
+    [Header("Patrol animation management")]
     public float timeToStayBeforeNextCheckpoint;
     public float timeToPatrol;
 
@@ -141,6 +150,11 @@ public class NPCmovement : MonoBehaviour
                             patrollingTimer = Time.time;
                             patrol.SetTrigger("Start");
                         }
+                    }
+                    else
+                    {
+                        FoV.SetAimDirection(StaticLookingDirection);
+                        FoV.SetOrigin(transform.position);
                     }
                 }
                 else

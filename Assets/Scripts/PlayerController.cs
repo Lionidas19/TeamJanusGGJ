@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     int KeysPickedUp;
 
+    [Tooltip("Drag the Black object from the LevelLoader object in the hierarchy")]
     public Animator transition;
 
     public float transitionTime = 1f;
