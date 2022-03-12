@@ -12,13 +12,17 @@ public class FOV : MonoBehaviour
     private float startingAngle;
     private bool captureColliders;
     float timeStart;
+
+    public float viewingAngle;
+    public float FOVsize;
+    
     // Start is called before the first frame update
     void Start()
     {
         mesh = new Mesh();
         mesh.name = "Mesh";
         GetComponent<MeshFilter>().mesh = mesh;
-        fov = 30f;
+        fov = viewingAngle;
         origin = Vector3.zero;
         poly2D = gameObject.AddComponent<PolygonCollider2D>();
         poly2D.isTrigger = true;
@@ -31,7 +35,7 @@ public class FOV : MonoBehaviour
         int rayCount = 30;
         float angle = startingAngle;
         float angleIncrease = fov / rayCount;
-        float viewDistance = 10f;
+        float viewDistance = FOVsize;
         float timeNow = Time.time;
 
         if(timeNow - timeStart > 0.5f)
