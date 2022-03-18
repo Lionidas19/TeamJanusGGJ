@@ -368,12 +368,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6640444327546648289, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
       propertyPath: m_Text
-      value: Just try.
+      value: You are Useless!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640444327546648289, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640444327546648289, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640444327546648289, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640444327546648289, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7322588118114592749, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: e88b70b653bcf0d47a2159c7774e8291, type: 2}
+    - target: {fileID: 8438536509723211047, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 143.3419
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438536509723211047, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 20.0549
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438536509723211047, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.2561
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438536509723211047, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.0097
+      objectReference: {fileID: 0}
     - target: {fileID: 8438536511122577625, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
       propertyPath: m_Name
       value: NPC - Dark (1)

@@ -28,10 +28,10 @@ namespace DialogueSystem
                     SwitchToDialogueResponseWithIndex(current_dialogue_response_index + 1);
                 }
             }*/
-            if (is_displaying)
+            /*if (is_displaying)
             {
                 speech_bubble_container.transform.position = Camera.main.WorldToScreenPoint((Vector2)transform.position + new Vector2(0, 1.5f));
-            }
+            }*/
         }
 
         public void DisplayDialogueLine(DialogueLine line)
