@@ -389,7 +389,7 @@ PrefabInstance:
     - target: {fileID: 7322588118114592749, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: e88b70b653bcf0d47a2159c7774e8291, type: 2}
+      objectReference: {fileID: 9100000, guid: 053a6be3a6628994494afdc4790ed20e, type: 2}
     - target: {fileID: 8438536509723211047, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
       propertyPath: m_SizeDelta.x
       value: 143.3419
@@ -409,6 +409,10 @@ PrefabInstance:
     - target: {fileID: 8438536511122577625, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
       propertyPath: m_Name
       value: NPC - Dark (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438536511122577625, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8438536511122577626, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
       propertyPath: m_RootOrder
@@ -465,7 +469,7 @@ PrefabInstance:
     - target: {fileID: 8438536511122577629, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
       propertyPath: patrolClip
       value: 
-      objectReference: {fileID: 7400000, guid: a2e4785d4e45a7943a4ac0a9d5b10a8a, type: 2}
+      objectReference: {fileID: 7400000, guid: 800215dad85e1404bb5382a98faa52fa, type: 2}
     - target: {fileID: 8438536511122577629, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
       propertyPath: timeToPatrol
       value: 2.5
@@ -967,6 +971,10 @@ PrefabInstance:
     - target: {fileID: 8438536511122577625, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
       propertyPath: m_Name
       value: NPC - Dark
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438536511122577625, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8438536511122577626, guid: 3a0dc1258ef97de4f9a51144c9659482, type: 3}
       propertyPath: m_RootOrder
