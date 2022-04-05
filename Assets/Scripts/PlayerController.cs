@@ -27,6 +27,11 @@ public class PlayerController : MonoBehaviour
 
     public float MovementSpeed;
 
+    public Sprite spriteUp;
+    public Sprite spriteDown;
+    public Sprite spriteLeft;
+    public Sprite spriteRight;
+
     void Awake()
     {
         camera = GameObject.FindGameObjectWithTag("MainCamera");
@@ -53,10 +58,22 @@ public class PlayerController : MonoBehaviour
             if (movementInput.x >= 0.7)
             {
                 rigidbody.MoveRotation(0);
+                gameObject.GetComponent<SpriteRenderer>().sprite = spriteRight;
             }
             else if (movementInput.x <= -0.7)
             {
                 rigidbody.MoveRotation(-180);
+                gameObject.GetComponent<SpriteRenderer>().sprite = spriteLeft;
+            }
+            else if (movementInput.y >= 0.7)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = spriteUp;
+
+            }
+            else if (movementInput.y <= -0.7)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = spriteDown;
+
             }
 
             camera.transform.position = new Vector3(transform.position.x, transform.position.y, camera.transform.position.z);
